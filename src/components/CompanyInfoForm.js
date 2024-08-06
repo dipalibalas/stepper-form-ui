@@ -15,13 +15,13 @@ import {
 } from "@mui/material";
 import "./CompanyInfoForm.css";
 
-const validationSchema = Yup.object({
-  fields: Yup.array()
-    .min(1, "At least one field must be selected")
-    .required("Field is required"),
-  employees: Yup.string().required("Number of employees is required"),
-  wfhPolicy: Yup.string().required("Work from home policy is required"),
-});
+// const validationSchema = Yup.object({
+//   fields: Yup.array()
+//     .min(1, "At least one field must be selected")
+//     .required("Field is required"),
+//   employees: Yup.string().required("Number of employees is required"),
+//   wfhPolicy: Yup.string().required("Work from home policy is required"),
+// });
 
 const fieldsOptions = [
   "Web Developement",
