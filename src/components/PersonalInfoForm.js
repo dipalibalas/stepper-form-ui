@@ -40,7 +40,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.firstName && Boolean(errors.firstName)}
                 helperText={<ErrorMessage name="firstName" />}
                 fullWidth
-                required
+                // required
               />
             </div>
             <div className="form-field">
@@ -51,7 +51,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.lastName && Boolean(errors.lastName)}
                 helperText={<ErrorMessage name="lastName" />}
                 fullWidth
-                required
+                // required
               />
             </div>
             <div className="form-field">
@@ -62,7 +62,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.email && Boolean(errors.email)}
                 helperText={<ErrorMessage name="email" />}
                 fullWidth
-                required
+                // required
               />
             </div>
             <div className="form-field">
@@ -73,7 +73,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.companyName && Boolean(errors.companyName)}
                 helperText={<ErrorMessage name="companyName" />}
                 fullWidth
-                required
+                // required
               />
             </div>
             <div className="form-field">
@@ -84,7 +84,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.companyWebsite && Boolean(errors.companyWebsite)}
                 helperText={<ErrorMessage name="companyWebsite" />}
                 fullWidth
-                required
+                // required
               />
             </div>
             <div className="form-field">
@@ -96,7 +96,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.state && Boolean(errors.state)}
                 helperText={<ErrorMessage name="state" />}
                 fullWidth
-                required
+                // required
               >
                 {states.map((state) => (
                   <MenuItem key={state} value={state}>
@@ -113,7 +113,7 @@ const PersonalInfoForm = ({ handleNext, data }) => {
                 error={touched.zipCode && Boolean(errors.zipCode)}
                 helperText={<ErrorMessage name="zipCode" />}
                 fullWidth
-                required
+                // required
               />
             </div>
             <Button type="submit" variant="contained">

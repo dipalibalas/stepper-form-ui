@@ -12,16 +12,17 @@ import {
   FormLabel,
   FormGroup,
   MenuItem,
+  FormHelperText,
 } from "@mui/material";
 import "./CompanyInfoForm.css";
 
-// const validationSchema = Yup.object({
-//   fields: Yup.array()
-//     .min(1, "At least one field must be selected")
-//     .required("Field is required"),
-//   employees: Yup.string().required("Number of employees is required"),
-//   wfhPolicy: Yup.string().required("Work from home policy is required"),
-// });
+const validationSchema = Yup.object({
+  fields: Yup.array()
+    .min(1, "At least one field must be selected")
+    .required("Field is required"),
+  employees: Yup.string().required("Number of employees is required"),
+  wfhPolicy: Yup.string().required("Work from home policy is required"),
+});
 
 const fieldsOptions = [
   "Web Developement",
@@ -35,18 +36,19 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
   return (
     <Formik
       initialValues={data}
+      validationSchema={validationSchema}
       onSubmit={(values) => {
         handleNext(values);
       }}
     >
       {({ values, setFieldValue, errors, touched }) => (
         <div className="company-main-container">
-          {/* {console.log(errors, touched)} */}
           <Form className="company-form-container">
             <div className="form-field">
               <FormControl
                 component="fieldset"
-                error={touched.fields && Boolean(errors.fields)}
+
+                // required
               >
                 <FormLabel component="legend">
                   Your company is working on which field
@@ -79,6 +81,12 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                     />
                   ))}
                 </FormGroup>
+
+                <ErrorMessage
+                  name="fields"
+                  className="error-message"
+                  component="div"
+                />
               </FormControl>
             </div>
 
@@ -88,7 +96,10 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                 as={TextField}
                 select
                 label="How many employees are in your company?"
+                // error={touched.employees && Boolean(errors.employees)}
+                // helperText={<ErrorMessage name="employees" />}
                 fullWidth
+                // required
               >
                 {employeesOptions.map((val) => (
                   <MenuItem key={val} value={val}>
@@ -96,12 +107,17 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                   </MenuItem>
                 ))}
               </Field>
+              <ErrorMessage
+                name="employees"
+                className="error-message"
+                component="div"
+              />
             </div>
             <div className="form-field">
               <FormControl
                 component="fieldset"
-                error={touched.wfhPolicy && Boolean(errors.wfhPolicy)}
-                required
+                // error={touched.wfhPolicy && Boolean(errors.wfhPolicy)}
+                // required
               >
                 <FormLabel component="legend">
                   Does the company have a WFH policy?
@@ -118,6 +134,12 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                   />
                   <FormControlLabel value="no" control={<Radio />} label="No" />
                 </RadioGroup>
+                {/* <ErrorMessage name="wfhPolicy" component="div" /> */}
+                <ErrorMessage
+                  name="wfhPolicy"
+                  className="error-message"
+                  component="div"
+                />
               </FormControl>
             </div>
             <div className="form-buttons">

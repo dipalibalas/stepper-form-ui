@@ -42,7 +42,7 @@ const PlanSelectionForm = ({ handleNext, handleBack, data }) => {
       initialValues={data}
       validationSchema={validationSchema}
       onSubmit={(values) => {
-        // console.log(values);
+        console.log(values);
         setOpenModal(true);
       }}
     >
@@ -60,7 +60,7 @@ const PlanSelectionForm = ({ handleNext, handleBack, data }) => {
                     renderInput={(params) => (
                       <TextField
                         {...params}
-                        required
+                        // required
                         fullWidth
                         error={touched.startDate && Boolean(errors.startDate)}
                         helperText={<ErrorMessage name="startDate" />}
@@ -69,28 +69,13 @@ const PlanSelectionForm = ({ handleNext, handleBack, data }) => {
                   />
                 </DemoContainer>
               </LocalizationProvider>
+              <ErrorMessage
+                name="startDate"
+                className="error-message"
+                component="div"
+              />
             </div>
-            {/* <div className="form-field">
-              <Field
-                name="planType"
-                as={TextField}
-                select
-                label="Plan Type"
-                value={values.planType}
-                onChange={(event) =>
-                  setFieldValue("planType", event.target.value)
-                }
-                error={touched.planType && Boolean(errors.planType)}
-                helperText={<ErrorMessage name="planType" />}
-                required
-              >
-                {plans.map((plan) => (
-                  <MenuItem key={plan.type} value={plan.label}>
-                    {plan.label} (${plan.price})
-                  </MenuItem>
-                ))}
-              </Field>
-            </div> */}
+
             <div className="form-field">
               <Field
                 name="planType"
@@ -104,7 +89,7 @@ const PlanSelectionForm = ({ handleNext, handleBack, data }) => {
                 error={touched.planType && Boolean(errors.planType)}
                 helperText={<ErrorMessage name="planType" />}
                 fullWidth
-                required
+                // required
               >
                 {plans.map((val) => (
                   <MenuItem key={val.type} value={val.label}>
@@ -126,7 +111,12 @@ const PlanSelectionForm = ({ handleNext, handleBack, data }) => {
                     <InputAdornment position="start"></InputAdornment>
                   ),
                 }}
-                required
+                // required
+              />
+              <ErrorMessage
+                name="numberOfUsers"
+                className="error-message"
+                component="div"
               />
             </div>
             <div className="form-actions">
