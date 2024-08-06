@@ -35,19 +35,18 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
   return (
     <Formik
       initialValues={data}
-      validationSchema={validationSchema}
       onSubmit={(values) => {
         handleNext(values);
       }}
     >
       {({ values, setFieldValue, errors, touched }) => (
         <div className="company-main-container">
+          {/* {console.log(errors, touched)} */}
           <Form className="company-form-container">
             <div className="form-field">
               <FormControl
                 component="fieldset"
                 error={touched.fields && Boolean(errors.fields)}
-                required
               >
                 <FormLabel component="legend">
                   Your company is working on which field
@@ -80,7 +79,6 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                     />
                   ))}
                 </FormGroup>
-                <ErrorMessage name="fields" component="div" />
               </FormControl>
             </div>
 
@@ -90,10 +88,7 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                 as={TextField}
                 select
                 label="How many employees are in your company?"
-                error={touched.employees && Boolean(errors.employees)}
-                helperText={<ErrorMessage name="employees" />}
                 fullWidth
-                required
               >
                 {employeesOptions.map((val) => (
                   <MenuItem key={val} value={val}>
@@ -123,7 +118,6 @@ const CompanyInfoForm = ({ handleNext, handleBack, data }) => {
                   />
                   <FormControlLabel value="no" control={<Radio />} label="No" />
                 </RadioGroup>
-                <ErrorMessage name="wfhPolicy" component="div" />
               </FormControl>
             </div>
             <div className="form-buttons">

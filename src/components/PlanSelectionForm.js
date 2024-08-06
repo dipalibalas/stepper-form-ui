@@ -42,7 +42,7 @@ const PlanSelectionForm = ({ handleNext, handleBack, data }) => {
       initialValues={data}
       validationSchema={validationSchema}
       onSubmit={(values) => {
-        console.log(values);
+        // console.log(values);
         setOpenModal(true);
       }}
     >
