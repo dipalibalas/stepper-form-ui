@@ -1,0 +1,68 @@
+.plan-main-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.plan-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-field {
+  margin: 8px 0;
+  width: 100%; /* Ensure the fields take the full width of the container */
+}
+
+.form-field input,
+.form-field .MuiTextField-root {
+  width: 100%; /* Set all input fields to be the same width */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.form-actions button {
+  background-color: #1976d2;
+  color: white;
+}
+
+.summary {
+  margin-top: 16px;
+  text-align: center; /* Center align text */
+}
+
+@media (max-width: 600px) {
+  .plan-form-container {
+    padding: 12px;
+  }
+
+  .form-field {
+    margin: 6px 0;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-actions button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}

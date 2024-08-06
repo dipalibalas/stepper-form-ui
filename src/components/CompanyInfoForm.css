@@ -1,0 +1,55 @@
+.company-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%;
+    box-sizing: border-box;
+    padding: 20px; */
+  }
+  
+  .company-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-field {
+    margin: 8px 0;
+    width: 100%;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .form-container {
+      padding: 12px;
+    }
+  
+    .form-field {
+      margin: 6px 0;
+    }
+  
+    .form-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-buttons button {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+  
